@@ -36,6 +36,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: C:\Users\User\OneDrive\Documents\Code\CS 333\333 Final Project\333-Final-Project>
+          asset_path: ./main/
           asset_name: 333_Deployment.zip
           asset_content_type: application/zip
