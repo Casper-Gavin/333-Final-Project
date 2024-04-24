@@ -24,10 +24,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: Release_Tag
-          release_name: Release_Tag
+          tag_name: ${{ github.sha }}
+          release_name: Release ${{ github.sha }}
           body: |
-            Automatic release triggered by commit: Release_Tag
+            Automatic release triggered by commit: ${{ github.sha }}
 
       - name: Upload Artifact
         id: upload-release-asset
