@@ -37,3 +37,4 @@ jobs:
     - name: Test with unittest
       run: |
         pip install unittest
+        python TestManager.py
