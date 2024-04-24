@@ -26,6 +26,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Test with unittest
+        run: python TestManager.py
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
