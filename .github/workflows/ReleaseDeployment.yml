@@ -7,7 +7,7 @@ on:
       
 permissions:
   contents: write
-
+# change tags before pushing to github
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -23,10 +23,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v2.6
-          release_name: Release v2.6
+          tag_name: v2.5
+          release_name: Release v2.5
           body: |
-            Automatic release triggered by commit: v2.6
+            Automatic release triggered by commit: v2.5
 
       - name: Upload Artifact
         id: upload-release-asset
