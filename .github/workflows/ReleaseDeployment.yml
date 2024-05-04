@@ -7,7 +7,7 @@ on:
       
 permissions:
   contents: write
-# change tags before pushing to github
+# change tags before pushing to github - add + .1 to tag
 jobs:
   release:
     runs-on: ubuntu-latest
