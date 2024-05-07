@@ -10,23 +10,37 @@ permissions:
 # change tags before pushing to github - add + .1 to tag
 jobs:
   release:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest #windows-latest for executeable
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # - name: setup python
+        #  uses: action/setup-python@v3
+        #  with:
+              # python-version: '3.x'
+              # architecture: 'x64'
+      # - name: Install dependencies
+      #   run: |
+      #     python -m install --upgrade pip
+      #     pip install pyinstaller
 
+      # - name: build executable
+      #   run: |
+      #     pyinstaller --name Bar_exec Main.py # creates dist folder
+      #     powershell Compress-Archive dist Bar_exec.zip #compress the dist folder into Bar_exec.zip
+      
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v2.7
-          release_name: Release v2.7
+          tag_name: v2.8
+          release_name: Release v2.8
           body: |
-            Automatic release triggered by commit: v2.7
+            Automatic release triggered by commit: v2.8
 
       - name: Upload Artifact
         id: upload-release-asset
